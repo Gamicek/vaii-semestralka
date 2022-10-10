@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontEndController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::group(['as' => 'fe-pages.'], function() {
+    Route::get('/', [FrontEndController::class, 'homePage'])->name('home-page');
+    Route::get('/contact',[FrontEndController::class, 'contactPage'])->name('contact-page');
 });
+
+
+
