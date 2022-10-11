@@ -1,9 +1,8 @@
 @extends('layouts.master')
-@section('page-title',"Kontakt")
+@section('page-title',"Blog")
 @include('include.header')
 @section('page-content')
     
-<h1>Kontakt</h1>
+<h1>Blog</h1>
 
 @endsection
-

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+
+
+    .navBar{
+        @apply block py-2 pr-4 pl-3 border-gray-700 text-gray-400
+    }
+
+   .navBar:hover {
+        @apply text-white bg-gray-700
+    }    
+
+    @screen md {
+        .navBar:hover{
+            @apply bg-transparent text-white
+        }
+        .navBar {
+            @apply p-0
+        }
+    }
+
+} 

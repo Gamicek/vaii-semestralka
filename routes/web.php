@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['as' => 'fe-pages.'], function() {
     Route::get('/', [FrontEndController::class, 'homePage'])->name('home-page');
     Route::get('/contact',[FrontEndController::class, 'contactPage'])->name('contact-page');
+    Route::get('/blog', [FrontEndController::class, 'blogPage'])->name('blog-page');
+    Route::get('/services',[FrontEndController::class,'servicesPage'])->name('services-page');
+    Route::get('/aboutUs',[FrontEndController::class,'aboutUsPage'])->name('aboutUs-page');
 });
 
 
