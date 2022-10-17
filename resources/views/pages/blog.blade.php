@@ -4,5 +4,5 @@
 @section('page-content')
     
 <h1>Blog</h1>
-
+@include('include.footer')
 @endsection

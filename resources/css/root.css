@@ -7,7 +7,7 @@
 
 
     .navBar{
-        @apply block py-2 pr-4 pl-3 border-gray-700 text-gray-400
+        @apply block py-2 pr-4 pl-1 border-gray-700 text-gray-400 
     }
 
    .navBar:hover {
@@ -22,5 +22,13 @@
             @apply p-0
         }
     }
+
+    .categories-bg{
+       background-image: linear-gradient(theme('colors.slate.800/50%'),theme('colors.slate.800/50%')), url('/img/categories-bg.jpg');
+       
+
+    }
+
+
 
 } 
