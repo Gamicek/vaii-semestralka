@@ -1,4 +1,8 @@
-<div class="flex w-full max-w-[400px] md:ml-10">
+<!DOCTYPE html>
+<html lang="en">
+<title>@yield('page-title')</title>
+
+<div class="flex w-full max-w-[400px] ml-10">
     <div class="flex items-center justify-center bg-pallette-light-blue w-16 ">
         <i class="{{$icon}} text-white text-3xl py-5"></i>
     </div>

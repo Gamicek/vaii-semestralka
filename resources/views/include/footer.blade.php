@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>@yield('page-title')</title>
+
 <footer>
     <section class="bg-blue-900 mt-1">
         <div class="grid lg:grid-cols-5 md:grid-cols-2 gap-10 max-w-[1300px] mx-auto p-9 grid-cols-1">
@@ -13,12 +17,12 @@
             <div class="text-left max-w-sm mr-0 w-full">
                     <h3 class="text-white text-xl font-bold uppercase">Our services</h3>
                     <ul class="list-disc mt-3">
-                        <li class="text-pallette-text-gray">Smarth Phone oprava</li>
-                        <li class="text-pallette-text-gray">Tablet a iPad Oprava</li>
-                        <li class="text-pallette-text-gray">Desktop a Laptopy</li>
-                        <li class="text-pallette-text-gray">Herné konzoly opravy</li>
-                        <li class="text-pallette-text-gray">LCD a LED TV opravy</li>
-                        <li class="text-pallette-text-gray">MP3 a MP4 </li>
+                        <li class="text-pallette-text-gray">Smart Phone Repair</li>
+                        <li class="text-pallette-text-gray">Tablets & iPad Repair</li>
+                        <li class="text-pallette-text-gray">Desktop & Laptopy</li>
+                        <li class="text-pallette-text-gray">Gaming System Repair</li>
+                        <li class="text-pallette-text-gray">LCD & LED TV Repair</li>
+                        <li class="text-pallette-text-gray">MP3 & MP4 Player </li>
                     </ul>
             </div>
 
@@ -38,7 +42,7 @@
                     </div>
             </div>
 
-                <div class=" row max-w-sm w-full">
+            <div class=" row max-w-sm w-full">
                     <h2 class="text-white text-xl font-bold uppercase lg:text-center md:text-left">contact info</h2>
                     
                     @include('include.contactInfo',[
@@ -48,7 +52,7 @@
                     ])
 
                      @include('include.contactInfo',[
-                        'title' => 'zavolajte nám',
+                        'title' => 'Contact US',
                         'text' => '+321 4567 89 012 & 79 023',
                         'icon' => 'fa-solid fa-phone'
                     ])
@@ -60,16 +64,12 @@
                     ])
                     
                      @include('include.contactInfo',[
-                        'title' => 'otváracie hodiny',
+                        'title' => 'opening time',
                         'text' => 'Mon - Sat: 09.00am to 18.00pm',
                         'icon' => 'fa-solid fa-clock'
                     ])
-
-
-
-
-
             </div>
+
         </div>
     </section>
 </footer>

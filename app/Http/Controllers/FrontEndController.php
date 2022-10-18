@@ -24,4 +24,6 @@ class FrontEndController extends Controller
     public function aboutUsPage(){
         return view('pages.aboutUs');
     }
+
+  
 }

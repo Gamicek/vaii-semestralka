@@ -6,10 +6,8 @@
 <h1>O nas</h1>
 
 
-
-
 <section>
-        <h2 class="text-center text-4xl font-bold mt-20">Náš Team</h2>
+    <h2 class="text-center text-4xl font-bold mt-20">Náš Team</h2>
     <div class="grid lg:grid-cols-3 md:grid-cols-2 max-w-[1300px] mx-auto mb-16">
         @include('include.ourTeam', [
             'name' => 'Parsley Montana',
@@ -53,11 +51,9 @@
 </section>
 
 <section class="bg-gray-300 mb-0">
-  
-
-        <div class="grid lg:grid-cols-3 max-w-[1300px] mx-auto p-9 mt-10 ">
+    <div class="grid lg:grid-cols-3 max-w-[1300px] mx-auto p-9 mt-10 ">
             <div class="grid ">
-                <img src="http://tk.commonsupport.com/repairplus/wp-content/uploads/2017/02/core-value.png.webp" alt="">
+                <img class="" src="http://tk.commonsupport.com/repairplus/wp-content/uploads/2017/02/core-value.png.webp" alt="">
             </div>
             
             <div class="grid col-span-2">
@@ -66,17 +62,17 @@
                 <div class="grid lg:grid-cols-2 gap-10">
                     <div>
                         <h4 class="text-xl font-bold">Positive & Optimistic</h4>
-                        <p class="text-pallette-text-gray mt-3">How all this mistaken idea denouncing seds pleasurepraising pain was born and will give you a complete account of the system.</p>
+                        <p class="text-gray-500 mt-3">How all this mistaken idea denouncing seds pleasurepraising pain was born and will give you a complete account of the system.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold">Wow Customer Service</h4>
-                        <p class="text-pallette-text-gray mt-3">Some great pleasure take trivial example, whichof ever undertakes laborious physical except to obtain some advantage.</p>
+                        <p class="text-gray-500 mt-3">Some great pleasure take trivial example, whichof ever undertakes laborious physical except to obtain some advantage.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold">Love Customer</h4>
-                        <p class="text-pallette-text-gray mt-3">The master-builder of human happiness no one rejects, dislikes,avoids pleasure itself, because it is pleasure extremely.</p>
+                        <p class="text-gray-500 mt-3">The master-builder of human happiness no one rejects, dislikes,avoids pleasure itself, because it is pleasure extremely.</p>
                     </div>
 
                     <div>
@@ -87,7 +83,7 @@
 
                 </div>
             </div>
-        </div>
+    </div>
    
     
 </section>

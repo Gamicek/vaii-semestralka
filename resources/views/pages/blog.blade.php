@@ -3,6 +3,6 @@
 @include('include.header')
 @section('page-content')
     
-<h1>Blog</h1>
+<h1 class="m-20">Blog</h1>
 @include('include.footer')
 @endsection

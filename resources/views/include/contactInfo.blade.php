@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>@yield('page-title')</title>
+
 <div class="flex mt-3 w-96 ">
     <div class="flex items-center">
         <i class="{{$icon}} text-pallette-light-blue text-lg"></i>
