@@ -10,17 +10,18 @@
       
   </a>
 
-  <div class="flex md:order-2 ">
-      <i class="hidden lg:flex fa-solid fa-mobile-screen text-4xl text-blue-700 mt-1"></i>
-      <div class="lg:flex flex-col pl-3 hidden">
-        <p class="text-gray-500">Customer Care</p>
-        <p class="text-white">09057578</p>
-      </div>  
-  </div>
+    <div class="flex md:order-2 ">
+        <i class="hidden lg:flex fa-solid fa-mobile-screen text-4xl text-blue-700 mt-1"></i>
+        <div class="lg:flex flex-col pl-3 hidden">
+          <p class="text-gray-500">Customer Care</p>
+          <p class="text-white">09057578</p>
+        </div>  
+      
+    </div>
 
 
-    <div class=" hidden justify-between items-center w-full md:flex md:w-auto md:order-1 "  id="navbar-sticky">
-      <ul class="flex flex-col p-4 mt-4 bg-gray-800 md:bg-blue-900 border-gray-700 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">  
+    <div class=" text-center lg:text-left justify-between items-center w-full md:flex md:w-auto md:order-1"  id="navbar-sticky">
+      <ul class="flex flex-col p-4 mt-4 bg-blue-900 md:bg-blue-900 border-gray-700 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">  
           <li>
           <a href="{{ route('fe-pages.home-page')}}" class="navBar uppercase ">Home</a>
         </li>

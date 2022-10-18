@@ -5,7 +5,7 @@
  
 <section class=" mb-20 ">
 
-  <h1 class="text-center text-4xl font-bold mt-32">Kontaktujte nás</h1>
+  <h1 class="text-center text-4xl font-bold mt-96 md:mt-32">Kontaktujte nás</h1>
 
 
   <form class="w-full max-w-lg m-auto mt-10 ">

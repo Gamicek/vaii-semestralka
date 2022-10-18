@@ -3,7 +3,7 @@
 @include('include.header')
 @section('page-content')
 
-<div class="bg-gray-200 p-10 mt-16">
+<div class="bg-gray-200 p-10 mt-96 md:mt-16">
         <h2 class="text-center font-bold text-3xl uppercase">SmarthPhone repair</h2>
 </div>
 

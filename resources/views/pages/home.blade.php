@@ -4,7 +4,7 @@
 @section('page-content')
     
 
-<section class="mt-16 relative lg:h-[540px] lg:flex items-center justify-center">
+<section class=" mt-96 md:mt-16 relative lg:h-[540px] lg:flex items-center justify-center">
     <img class=" hidden md:block absolute top-0 left-0" src="{{asset('img/slider1.jpg')}}" alt="fotka">
     <div class=" max-w-[1500px] mx-auto flex justify-start lg:w-[1500px] mt-24 lg:mt-0">
             <div class="z-10 text-center lg:text-left">

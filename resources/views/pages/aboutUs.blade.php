@@ -7,7 +7,7 @@
 
 
 <section>
-    <h2 class="text-center text-4xl font-bold mt-20">Náš Team</h2>
+    <h2 class="text-center text-4xl font-bold mt-96 md:mt-20">Náš Team</h2>
     <div class="grid lg:grid-cols-3 md:grid-cols-2 max-w-[1300px] mx-auto mb-16">
         @include('include.ourTeam', [
             'name' => 'Parsley Montana',
