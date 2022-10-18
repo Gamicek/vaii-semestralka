@@ -25,5 +25,7 @@ module.exports = {
       ...defaultTheme.screens,
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"),
+            require('@themesberg/flowbite/plugin')]
+
 };
