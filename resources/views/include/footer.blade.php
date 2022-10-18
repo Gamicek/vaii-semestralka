@@ -8,7 +8,7 @@
 
             <div class=" max-w-sm text-center lg:col-span-2 w-full">
                 <img src="{{asset('img/footer-logo.png')}}" class="w-60 " alt="logo">
-                <h3 class="text-gray-400 pt-8 text-left">Repairplus brings 41 years of Digital Repairs experience right to your Device.
+                <h3 class="text-gray-300 pt-8 text-left">Repairplus brings 41 years of Digital Repairs experience right to your Device.
                     Our Texhnicians are equipped to help you that work best.
                     <br><br>
                     Our commitment to bring professionalism, good service & trust to the Phone repair service & maintenance business.</h3>
@@ -17,27 +17,27 @@
             <div class="text-left max-w-sm mr-0 w-full">
                     <h3 class="text-white text-xl font-bold uppercase">Our services</h3>
                     <ul class="list-disc mt-3">
-                        <li class="text-pallette-text-gray">Smart Phone Repair</li>
-                        <li class="text-pallette-text-gray">Tablets & iPad Repair</li>
-                        <li class="text-pallette-text-gray">Desktop & Laptopy</li>
-                        <li class="text-pallette-text-gray">Gaming System Repair</li>
-                        <li class="text-pallette-text-gray">LCD & LED TV Repair</li>
-                        <li class="text-pallette-text-gray">MP3 & MP4 Player </li>
+                        <li class="text-gray-300 m-1">Smart Phone Repair</li>
+                        <li class="text-gray-300 m-1">Tablets & iPad Repair</li>
+                        <li class="text-gray-300 m-1">Desktop & Laptopy</li>
+                        <li class="text-gray-300 m-1">Gaming System Repair</li>
+                        <li class="text-gray-300 m-1">LCD & LED TV Repair</li>
+                        <li class="text-gray-300 m-1">MP3 & MP4 Player </li>
                     </ul>
             </div>
 
             <div class="text-left max-w-sm w-full">
                     <h3 class="text-white text-xl font-bold uppercase ml-0">Subscribe us</h3>
-                    <p class="text-pallette-text-gray mt-3">Subscibe to our newstletter!</p>
+                    <p class="text-gray-300 mt-3">Subscibe to our newstletter!</p>
                     <input class="my-2 p-1" type="email" placeholder=" Váš email..." type="text">
-                    <h3 class="text-pallette-text-gray">Neposielame vám spamy a váš email je v bezpečí </h3>
+                    <h3 class="text-gray-300">Neposielame vám spamy a váš email je v bezpečí </h3>
 
                     <div>
                         <ul class="flex mt-3">
-                            <li class="mr-4"><a href=""></a><i class="fa-brands fa-facebook-f text-pallette-text-gray text-lg"></i></li>
-                            <li class="mr-4"><a href=""></a><i class="fa-brands fa-instagram text-pallette-text-gray text-lg"></i></li>
-                            <li class="mr-4"><a href=""></a><i class="fa-brands fa-twitter text-pallette-text-gray text-lg"></i></li>
-                            <li class=""><a href=""></a><i class="fa-brands fa-linkedin-in text-pallette-text-gray text-lg"></i></li>
+                            <li class="mr-4"><a href=""></a><i class="fa-brands fa-facebook-f text-gray-300 text-lg"></i></li>
+                            <li class="mr-4"><a href=""></a><i class="fa-brands fa-instagram text-gray-300 text-lg"></i></li>
+                            <li class="mr-4"><a href=""></a><i class="fa-brands fa-twitter text-gray-300 text-lg"></i></li>
+                            <li class=""><a href=""></a><i class="fa-brands fa-linkedin-in text-gray-300 text-lg"></i></li>
                         </ul>
                     </div>
             </div>

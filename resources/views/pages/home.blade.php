@@ -4,7 +4,7 @@
 @section('page-content')
     
 
-<section class=" mt-96 md:mt-16 relative lg:h-[540px] lg:flex items-center justify-center">
+<section class=" mt-96 md:mt-16 relative lg:h-[540px] lg:flex items-center justify-center ">
     <img class=" hidden md:block absolute top-0 left-0" src="{{asset('img/slider1.jpg')}}" alt="fotka">
     <div class=" max-w-[1500px] mx-auto flex justify-start lg:w-[1500px] mt-24 lg:mt-0">
             <div class="z-10 text-center lg:text-left">
@@ -14,9 +14,11 @@
                 <button class="uppercase transition duration-300 shadow bg-blue-400 hover:bg-blue-600 focus:shadow-outline focus:outline-none border-2 border-transparent hover:border-blue-400 text-white font-bold py-2 px-4 mt-10 mr-2 " type="button">
                     Buy
                 </button>
-                <button class="uppercase transition duration-300 shadow bg-blue-600 hover:bg-blue-400 focus:shadow-outline focus:outline-none border-2 border-transparent hover:border-blue-600 text-white font-bold py-2 px-4 " type="button">
-                    Contact us
-                </button>
+                <a href="{{ route('fe-pages.contact-page')}}" class="">
+                    <button class="uppercase transition duration-300 shadow bg-blue-600 hover:bg-blue-400 focus:shadow-outline focus:outline-none border-2 border-transparent hover:border-blue-600 text-white font-bold py-2 px-4 " type="button">
+                        Contact us
+                    </button>
+                </a>
             </div>
     </div>
   

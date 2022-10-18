@@ -56,7 +56,8 @@
 </section>
 
 <section>
-  <iframe class="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5405253.768028328!2d15.2127884843936!3d48.58525954179091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471460b9ae7cc67f%3A0xcd6b6167b1723a7d!2sSlovensko!5e0!3m2!1ssk!2ssk!4v1665763524221!5m2!1ssk!2ssk"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <iframe class="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.892717579868!2d-73.99574358459341!3d40.76438427932628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2585030aa9f29%3A0xab71cee5daae1b86!2sAmerican%20Red%20Cross!5e0!3m2!1ssk!2ssk!4v1666091436288!5m2!1ssk!2ssk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 @include('include.footer')

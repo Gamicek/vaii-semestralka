@@ -6,14 +6,14 @@
 
   <div class="container flex flex-wrap justify-around items-center mx-auto ">
   <a href="{{ route('fe-pages.home-page')}}" class="flex items-center">
-      <img src="http://tk.commonsupport.com/repairplus/wp-content/themes/repairplus/images/resources/logo.png" class=" sm:h-12" alt="logo">
+      <img src="{{asset('img/footer-logo.png')}}" class="w-40 " alt="logo">
       
   </a>
 
     <div class="flex md:order-2 ">
         <i class="hidden lg:flex fa-solid fa-mobile-screen text-4xl text-blue-700 mt-1"></i>
         <div class="lg:flex flex-col pl-3 hidden">
-          <p class="text-gray-500">Customer Care</p>
+          <p class="text-gray-400">Customer Care</p>
           <p class="text-white">09057578</p>
         </div>  
       
