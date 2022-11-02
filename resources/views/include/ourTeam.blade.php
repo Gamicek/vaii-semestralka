@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<title>@yield('page-title')</title>
-
 <div class="group max-w-sm text-center overflow-hidden ml-10">
             <div class="overflow-hidden w-full mx-auto max-h-[250px] relative mt-20">
                 <img class=" transition duration-500 group-hover:scale-125 " src="{{$portrait}}" alt="">

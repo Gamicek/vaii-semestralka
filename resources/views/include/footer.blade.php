@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<title>@yield('page-title')</title>
-
 <footer>
     <section class="bg-blue-900 mt-1">
         <div class="grid lg:grid-cols-5 md:grid-cols-2 gap-10 max-w-[1300px] mx-auto p-9 grid-cols-1">

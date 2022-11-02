@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<title>@yield('page-title')</title>
-
 <div class="group border max-w-sm text-center overflow-hidden border-gray-200 mt-10">
             <h3 class="font-serif text-xl text-gray-700 py-4 uppercase">{{ $title }}</h3>
         <div class="overflow-hidden w-[90%] mx-auto max-h-[170px] relative">

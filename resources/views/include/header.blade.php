@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<title>@yield('page-title')</title>
-
 <nav class="px-2 sm:px-4 py-2.5 bg-blue-900 fixed w-full z-20 top-0 left-0 border-b border-gray-600 ">
 
   <div class="container flex flex-wrap justify-around items-center mx-auto ">
@@ -35,7 +31,7 @@
           <a href="{{ route('fe-pages.services-page')}}" class="navBar uppercase">Services</a>
         </li>
         <li>
-          <a href="{{ route('fe-pages.contact-page')}}" class="navBar uppercase">Contact Us</a>
+          <a href="{{ route('contact.index')}}" class="navBar uppercase">Contact Us</a>
         </li>
         
       </ul>
