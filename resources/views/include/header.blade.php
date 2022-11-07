@@ -25,13 +25,13 @@
           <a href="{{ route('fe-pages.aboutUs-page')}}" class="navBar uppercase">About</a>
         </li>
         <li>
-          <a href="{{ route('fe-pages.blog-page')}}" class="navBar uppercase">Blog</a>
+          <a href="{{ route('fe-pages.posts.index')}}" class="navBar uppercase">Posts</a>
         </li>
         <li>
           <a href="{{ route('fe-pages.services-page')}}" class="navBar uppercase">Services</a>
         </li>
         <li>
-          <a href="{{ route('contact.index')}}" class="navBar uppercase">Contact Us</a>
+          <a href="{{ route('fe-pages.contact.index')}}" class="navBar uppercase">Contact Us</a>
         </li>
         
       </ul>

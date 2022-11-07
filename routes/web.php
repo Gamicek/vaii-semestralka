@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['as' => 'fe-pages.'], function() {
     Route::get('/', [FrontEndController::class, 'homePage'])->name('home-page');
-    Route::get('/contact',[FrontEndController::class, 'contactPage'])->name('contact-page');
-    Route::get('/blog', [FrontEndController::class, 'blogPage'])->name('blog-page');
+    Route::resource("/contact", ContactController::class)->only(["index","store","destroy"]);
+    Route::resource("/posts", PostController::class)->only(["index","show","destroy"]);
     Route::get('/services',[FrontEndController::class,'servicesPage'])->name('services-page');
-    Route::get('/aboutUs',[FrontEndController::class,'aboutUsPage'])->name('aboutUs-page');
+    Route::get('/about-us',[FrontEndController::class,'aboutUsPage'])->name('aboutUs-page');
 });
-
 
 

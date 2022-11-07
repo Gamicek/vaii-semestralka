@@ -12,26 +12,25 @@
   <h1 class="text-center text-4xl font-bold mt-96 md:mt-32">Kontaktujte nás</h1>
 
 
-  <form class="w-full max-w-lg m-auto mt-10 " action="{{ route('contact.store') }}" method="POST">
+  <form class="w-full max-w-lg m-auto mt-10 flex flex-col" action="{{ route('fe-pages.contact.store') }}" method="POST">
     @csrf
-
     <p>
           @if ($errors->any())
-              <div class="error-wrapper">
-                  <h2 class="error-wrapper-heading">Form is filled wrong</h2>
-                  <ol class="error-wrapper-list">
+              <div class="w-full bg-rose-600 rounded-md mb-8">
+                  <h2 class="error-wrapper-heading font-bold text-xl text-white py-2 px-3 bg-rose-800 rounded-t-md">Form is filled wrong</h2>
+                  <ul class="error-wrapper-list pt-2 pb-3 px-3 list-disc ml-6 text-white">
                       @foreach ($errors->all() as $error)
                           <li>
-                              <p class="error-item">{{ $error }}</p>
+                              <p class="text-white">{{ $error }}</p>
                           </li>
                       @endforeach
-                  </ol>
+                  </ul>
               </div>
           @endif
       </p>
 
-    <div class="flex flex-wrap  -mx-3 mb-6">
-      <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+    <div class="flex flex-col  mb-6">
+      <div class="w-full mb-4 md:mb-0">
         <label class="block text-gray-700 text-sm font-bold mb-2">
           Meno
         </label>
@@ -40,8 +39,8 @@
 
      
 
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
+    <div class="flex   mb-6">
+      <div class="w-full">
         <label class="block text-gray-700 text-sm font-bold mb-2" >
           E-mail
         </label>
@@ -49,12 +48,12 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
+    <div class="flex  mb-6">
+      <div class="w-full">
         <label class="block text-gray-700 text-sm font-bold mb-2" >
           Správa
         </label>
-        <textarea name="message" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-10 focus:bg-blue-100 focus:border-gray-500 h-40 resize-none" id="message"></textarea>
+        <textarea name="message" class="   appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-10 focus:bg-blue-100 focus:border-gray-500 h-40 resize-none" id="message"></textarea>
       </div>
     </div>
 
