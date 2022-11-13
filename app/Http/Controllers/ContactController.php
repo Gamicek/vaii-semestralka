@@ -15,8 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts=Contact::all();
-        return view("pages.contact",compact('contacts'));
+        $contacts = Contact::all();
+        return view("pages.contact", compact('contacts'));
     }
 
     /**
@@ -38,7 +38,9 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            "email" => "required|email|max:100", "name" => "required|string|max:200", "message" => "required|min:3|max:2000",
+            "email" => "required|email|max:100",
+            "name" => "required|string|max:200",
+            "message" => "required|min:3|max:2000",
         ]);
 
         if ($validator->fails()) {
@@ -57,6 +59,5 @@ class ContactController extends Controller
      */
     public function destroy()
     {
-       
     }
 }

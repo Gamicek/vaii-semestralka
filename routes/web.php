@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrationController;
+use Illuminate\Auth\Events\Logout;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +19,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['as' => 'fe-pages.'], function() {
+Route::group(['as' => 'fe-pages.'], function () {
     Route::get('/', [FrontEndController::class, 'homePage'])->name('home-page');
-    Route::resource("/contact", ContactController::class)->only(["index","store","destroy"]);
-    Route::resource("/posts", PostController::class)->only(["index","show","destroy"]);
-    Route::get('/services',[FrontEndController::class,'servicesPage'])->name('services-page');
-    Route::get('/about-us',[FrontEndController::class,'aboutUsPage'])->name('aboutUs-page');
+    Route::resource("/contact", ContactController::class)->only(["index", "store", "destroy"]);
+    Route::resource("/posts", PostController::class)->only(["index", "show", "destroy"]);
+    Route::get('/services', [FrontEndController::class, 'servicesPage'])->name('services-page');
+    Route::get('/about-us', [FrontEndController::class, 'aboutUsPage'])->name('aboutUs-page');
+
+    //AlreadyLoggedIn
+
+    Route::resource("/registration", RegistrationController::class)->only(["index", "create", "store", "destroy"])->middleware('AlreadyLoggedIn');
+    Route::resource("/login", LoginController::class)->only(["index", "create", "store", "destroy"])->middleware('AlreadyLoggedIn');
+    Route::post('login-user', [LoginController::class, 'loginUser'])->name('login-user');
+    Route::get('/dashboarad', [LoginController::class, 'dashboarad'])->middleware('isLoggedIn');
+    Route::get('/logout', [LoginController::class, 'logout']);
 });
-
-

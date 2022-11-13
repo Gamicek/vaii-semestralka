@@ -33,6 +33,9 @@
         <li>
           <a href="{{ route('fe-pages.contact.index')}}" class="navBar uppercase">Contact Us</a>
         </li>
+        <li>
+          <a href="{{ route('fe-pages.login.index')}}" class="navBar uppercase">Log In</a>
+        </li>
         
       </ul>
     </div>

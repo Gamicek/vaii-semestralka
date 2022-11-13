@@ -44,7 +44,7 @@
         <label class="block text-gray-700 text-sm font-bold mb-2" >
           E-mail
         </label>
-        <input name="email" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-10 focus:bg-blue-100 focus:border-gray-500" id="email" type="email" placeholder="meno@email.com">
+        <input name="email" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-10 focus:bg-blue-100 focus:border-gray-500" id="email"  placeholder="meno@email.com">
       </div>
     </div>
 
@@ -53,7 +53,7 @@
         <label class="block text-gray-700 text-sm font-bold mb-2" >
           Správa
         </label>
-        <textarea name="message" class="   appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-10 focus:bg-blue-100 focus:border-gray-500 h-40 resize-none" id="message"></textarea>
+        <textarea value="{{old('message')}}" name="message" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-10 focus:bg-blue-100 focus:border-gray-500 h-40 resize-none" id="message"></textarea>
       </div>
     </div>
 
