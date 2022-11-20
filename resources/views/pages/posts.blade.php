@@ -7,65 +7,68 @@
     @include('include.header')
 </section>
 
+<section class="my-24">
+    <div class="w-4/5 m-auto text-center">
+        <div class="py-15 border-b border-gray-200">
+            <h2 class="text-6xl mb-10">
+                Blog Posts
+            </h2>
+        </div>
+    </div>
+
+    @if(Session::has('message'))
+            <div class="w-full bg-green-600 rounded-md mb-8">
+                <h2 class="error-wrapper-heading font-bold text-xl text-white py-2 px-3 bg-green-800 rounded-t-md">{{Session::get('message')}} </h2>
+            </div>
+    @endif
+    
 
 
+    @if (Session()->has('loginID'))
+    <div class="pt-15 w-4/5 m-auto text-gray-50 mt-8  ">
+        <a href="{{ route('fe-pages.posts.create') }}" class="uppercase font-bold bg-green-600 py-3 px-5 rounded-2xl hover:bg-green-900">Create post</a>
+    </div>
+   
+    @endif
 
+    @foreach ($posts as $post)
+        <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200 mt-20">
+            <div>
+                <img src="{{asset('images/' . $post->image_path)}}" alt="" class="mb-10  w-[700px] h-[600px]">
+            </div>
+            <div>
+                <h2 class="text-gray-700 font-bold text-5xl pb-4"> {{ $post->title }}</h2>
+                <span class="text-gray-500">
+                    By <span class="font-bold italic text-gray-800">{{ $post->user->name ?? 'none' }}</span>, Created on {{ date('jS M Y',strtotime($post->updated_at))}}
+                </span>
 
-<section class="bg-white dark:bg-gray-900 mt-7">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-      <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-          <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Blog</h2>
-          <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
-      </div> 
-      <div class="grid gap-8 lg:grid-cols-2">
-          <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-              <div class="flex justify-between items-center mb-5 text-gray-500">
-                  <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                      <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
-                      Tutorial
-                  </span>
-                  <span class="text-sm">14 days ago</span>
-              </div>
-              <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">How to quickly deploy a static website</a></h2>
-              <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
-              <div class="flex justify-between items-center">
-                  <div class="flex items-center space-x-4">
-                      <img class="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
-                      <span class="font-medium dark:text-white">
-                          Jese Leos
-                      </span>
-                  </div>
-                  <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
-                      Read more
-                      <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </a>
-              </div>
-          </article> 
-          <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-              <div class="flex justify-between items-center mb-5 text-gray-500">
-                  <span class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                      <svg class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path></svg>
-                      Article
-                  </span>
-                  <span class="text-sm">14 days ago</span>
-              </div>
-              <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a href="#">Our first project with React</a></h2>
-              <p class="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
-              <div class="flex justify-between items-center">
-                  <div class="flex items-center space-x-4">
-                      <img class="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green avatar" />
-                      <span class="font-medium dark:text-white">
-                          Bonnie Green
-                      </span>
-                  </div>
-                  <a href="#" class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
-                      Read more
-                      <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </a>
-              </div>
-          </article>                  
-      </div>  
-  </div>
+                <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">{{ $post->description }}</p>
+
+                <a href="/posts/{{ $post->slug }}" class="uppercase bg-blue-500 text-gray-100 font-extrabold py-4 px-8 rounded-3xl hover:bg-blue-800">
+                    Keep Reading
+                </a>
+
+                @if (Session()->has('loginID'))
+                    <span class="float-right mt-3">
+                        <a href="/posts/{{ $post->slug }}/edit" class=" uppercase py-3 px-7 rounded-2xl bg-gray-600 text-white hover:bg-slate-900 ">Edit</a>
+                    </span>
+
+                    <span class="float-right">
+                        <form action="/posts/{{ $post->slug }}" method="POST">
+                        @csrf
+                        @method('delete')
+
+                        <button class=" mr-2 mt-0 text-gray-400 uppercase py-3 px-5 bg-red-600 rounded-2xl hover:bg-gray-400 hover:text-red-600" type="submit">
+                            delete
+                        </button>
+                        </form>
+                    </span>
+                @endif
+            </div>
+        </div>  
+    @endforeach
+    
+
 </section>
 
 

@@ -22,7 +22,7 @@ use Illuminate\Auth\Events\Logout;
 Route::group(['as' => 'fe-pages.'], function () {
     Route::get('/', [FrontEndController::class, 'homePage'])->name('home-page');
     Route::resource("/contact", ContactController::class)->only(["index", "store", "destroy"]);
-    Route::resource("/posts", PostController::class)->only(["index", "show", "destroy"]);
+    Route::resource("/posts", PostController::class)->only(["index", "create", "store", "show", "edit", "update", "destroy"]);
     Route::get('/services', [FrontEndController::class, 'servicesPage'])->name('services-page');
     Route::get('/about-us', [FrontEndController::class, 'aboutUsPage'])->name('aboutUs-page');
 
