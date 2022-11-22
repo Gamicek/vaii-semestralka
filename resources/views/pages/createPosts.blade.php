@@ -1,70 +1,89 @@
 @extends('layouts.master')
-@section('page-title',"Posts")
+@section('page-title', 'Posts')
 
 @section('page-content')
-  
-<section>
-    @include('include.header')
-</section>
 
-<section class="my-24">
-    
-            <h2 class="text-6xl mb-8 text-center">
-                Create posts
-            </h2>
-      
-    
+    <section>
+        @include('include.header')
+    </section>
 
-    <div class="w-4/5 m-auto pt-20 block text-center object-center ">
-        
-        <div class="err create text-center mb-2 bg-red-600 text-white text-2xl rounded-md ">
-        <p></p>
-        </div>
-        <form action="/posts" method="POST" enctype="multipart/form-data" class="create_form">
-        @csrf
-        <p>
-          @if ($errors->any())
-              <div class="w-full bg-rose-600 rounded-md mb-8">
-                  <h2 class="error-wrapper-heading font-bold text-xl text-white py-2 px-3 bg-rose-800 rounded-t-md">Form is filled wrong</h2>
-                  <ul class="error-wrapper-list pt-2 pb-3 px-3 list-disc ml-6 text-white">
-                      @foreach ($errors->all() as $error)
-                          <li>
-                              <p class="text-white">{{ $error }}</p>
-                          </li>
-                      @endforeach
-                  </ul>
-              </div>
-          @endif
-        </p>
-        
-            <input type="text" name="title" placeholder="title.." class="createTitle bg-gray-300 block border-b-2 w-full h-20 text-4xl outline-none h-12 w-[400px] ">
-            <textarea name="description" placeholder="Description" class="createDescription py-20 bg-gray-0 block border-b-2 w-full h-60 text-xl outline-none w-[1600px]"></textarea>
-            <div class=" pt-15">
-                <label for="" class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide
-                uppercase border border-blue-500 cursor-pointer">
-                    <span class="mt-2 text-base leading-normal">
-                        Select a file
-                    </span>
-                    <input type="file" name="image" class="opacity-0 createImage">
-            </label>
+    <section class="my-24">
+
+        <h2 class="mb-8 text-center text-6xl">
+            Create posts
+        </h2>
+
+
+
+        <div class="m-auto block w-4/5 object-center pt-20 text-center">
+
+            <div class="err create mb-2 rounded-md bg-red-600 text-center text-2xl text-white">
+                <p></p>
             </div>
+            <form action="{{ route('fe-pages.posts.store') }}" method="POST" enctype="multipart/form-data" class="create_form">
+                @csrf
+                <p>
+                    @if ($errors->any())
+                        <div class="mb-8 w-full rounded-md bg-rose-600">
+                            <h2
+                                class="error-wrapper-heading rounded-t-md bg-rose-800 py-2 px-3 text-xl font-bold text-white">
+                                Form is filled wrong</h2>
+                            <ul class="error-wrapper-list ml-6 list-disc px-3 pt-2 pb-3 text-white">
+                                @foreach ($errors->all() as $error)
+                                    <li>
+                                        <p class="text-white">{{ $error }}</p>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </p>
 
-            <button type="submit" class="uppercase mt-15 bg-blue-500 text-gray-50 text-lg font-bold py-4 px-8 rounded-3xl hover:bg-blue-800">
-                Submit post
-            </button>
-        </form>
-    
-    </div>    
+                <div class="flex items-stretch justify-items-stretch gap-8">
+                    <div class="w-2/3">
+                        <div class="mt-8 w-full first:mt-0">
+                            <label class="mb-1 block w-full text-left text-xl font-bold text-gray-800"
+                                for="title-input-el">Title</label>
+                            <input type="text" name="title" placeholder="Enter title" id="title-input-el"
+                                class="createTitle block w-full rounded-md border-4 border-transparent bg-gray-200 px-3 py-2 text-xl text-gray-900 outline-none transition duration-300 focus:border-blue-500">
+                        </div>
+                        <div class="mt-8 w-full first:mt-0">
+                            <label class="mb-1 block w-full text-left text-xl font-bold text-gray-800"
+                                for="description-input-el">Description</label>
+                            <textarea name="description" placeholder="Enter description" rows="10" id="description-input-el"
+                                class="createDescription block w-full rounded-md border-4 border-transparent bg-gray-200 px-3 py-2 text-xl outline-none transition duration-300 focus:border-blue-500"></textarea>
+                        </div>
 
-    
-    
+                    </div>
+                    <div class="w-1/3">
+                        <label for="file-input-el"
+                            class="group relative flex h-full w-full cursor-pointer items-center justify-center rounded-lg border-4 border-dashed border-gray-600/50 bg-gray-100 px-2 py-3 uppercase tracking-wide shadow-lg transition duration-300 hover:border-blue-500 hover:bg-blue-100">
+                            <span
+                                class="text-2xl font-bold leading-normal text-gray-600 transition duration-300 group-hover:text-blue-800">
+                                Select a file
+                            </span>
+                            <input type="file" id="file-input-el" name="image"
+                                class="createImage absolute left-0 top-0 h-full w-full cursor-pointer opacity-0">
+                        </label>
+                    </div>
+                </div>
 
-</section>
+                <div class="mt-16">
+
+                    <button type="submit"
+                        class="mt-15 rounded-3xl bg-blue-500 py-4 px-8 text-lg font-bold uppercase text-gray-50 hover:bg-blue-800">
+                        Submit post
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+    </section>
 
 @section('scripts')
-        @vite([ 'resources/js/checkCreate.js'])
+    @vite(['resources/js/checkCreate.js'])
 @endsection
 
 @include('include.footer')
 @endsection
-
