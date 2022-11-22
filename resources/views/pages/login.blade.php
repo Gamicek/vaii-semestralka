@@ -10,7 +10,10 @@
 <section>
         
     <div class="flex items-center justify-center h-screen bg-gray-100">
-         <form action="{{ route('fe-pages.login-user') }}" method="POST">
+            <div class="err login">
+                <p></p>
+            </div>
+         <form action="{{ route('fe-pages.login-user') }}" class="loginForm" method="POST">
             @csrf
             
             @if(Session::has('success'))
@@ -37,13 +40,19 @@
                 </div>
                 @endif
             </p>
+
+            <div class="err log">
+                <p class="">
+
+                </p>
+            </div>
            
             <div class="bg-gray-200 w-96 p-6 rounded shadow-sm">
                 <h3 class="text-center text-2xl mb-4">Login</h3>  
-                <label class="text-black" for="">Email</label>
-                <input name="email" value="{{old('email')}}" class="w-full py-2 bg-gray-50 text-pallette-text-gray px-1 outline-none mb-4"  id="email" placeholder="Your email">
+                <label class="text-black " for="">Email</label>
+                <input name="email" value="{{old('email')}}" class="loginName w-full py-2 bg-gray-50 text-pallette-text-gray px-1 outline-none mb-4"  id="email" placeholder="Your email">
                 <label class="text-black" for="">Password</label>
-                <input name="password" class="w-full py-2 bg-gray-50 text-pallette-text-gray px-1 outline-none mb-4" type="password" id="password" placeholder="Your password" >
+                <input name="password" class="loginPassword w-full py-2 bg-gray-50 text-pallette-text-gray px-1 outline-none mb-4" type="password" id="password" placeholder="Your password" >
                 <button class="bg-pallette-light-blue w-full text-black py-2 rounded hover:bg-blue-600 transition-colors mt-4">Log In</button>
             </div>
             <li class="list-none">
@@ -52,6 +61,9 @@
         </form>
     </div>
 </section>
+@section('scripts')
+    @vite([ 'resources/js/checkLogin.js'])
+@endsection
 
 @include('include.footer')
 @endsection

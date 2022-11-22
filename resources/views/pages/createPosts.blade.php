@@ -15,8 +15,12 @@
       
     
 
-    <div class="w-4/5 m-auto pt-20 block text-center object-center  ">
-        <form action="/posts" method="POST" enctype="multipart/form-data">
+    <div class="w-4/5 m-auto pt-20 block text-center object-center ">
+        
+        <div class="err create">
+        <p></p>
+        </div>
+        <form action="/posts" method="POST" enctype="multipart/form-data" class="create_form">
         @csrf
         <p>
           @if ($errors->any())
@@ -33,15 +37,15 @@
           @endif
         </p>
         
-            <input type="text" name="title" placeholder="title.." class="bg-gray-300 block border-b-2 w-full h-20 text-4xl outline-none h-12 w-[400px] ">
-            <textarea name="description" placeholder="Description" class="py-20 bg-gray-0 block border-b-2 w-full h-60 text-xl outline-none w-[1600px]"></textarea>
+            <input type="text" name="title" placeholder="title.." class="createTitle bg-gray-300 block border-b-2 w-full h-20 text-4xl outline-none h-12 w-[400px] ">
+            <textarea name="description" placeholder="Description" class="createDescription py-20 bg-gray-0 block border-b-2 w-full h-60 text-xl outline-none w-[1600px]"></textarea>
             <div class=" pt-15">
                 <label for="" class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide
                 uppercase border border-blue-500 cursor-pointer">
                     <span class="mt-2 text-base leading-normal">
                         Select a file
                     </span>
-                    <input type="file" name="image" class="">
+                    <input type="file" name="image" class="opacity-0 createImage">
             </label>
             </div>
 
@@ -57,7 +61,9 @@
 
 </section>
 
-
+@section('scripts')
+        @vite([ 'resources/js/checkCreate.js'])
+@endsection
 
 @include('include.footer')
 @endsection
