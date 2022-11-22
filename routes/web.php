@@ -22,23 +22,33 @@ use Illuminate\Auth\Events\Logout;
 
 Route::group(['as' => 'fe-pages.'], function () {
     Route::get('/', [FrontEndController::class, 'homePage'])->name('home-page');
-    Route::resource("/contact", ContactController::class)->only(["index"]);
+    Route::resource("/contact", ContactController::class)->only(["index", "store"]);
 
     Route::resource("/posts", PostController::class);
 
     Route::get('/services', [FrontEndController::class, 'servicesPage'])->name('services-page');
     Route::get('/about-us', [FrontEndController::class, 'aboutUsPage'])->name('aboutUs-page');
+});
 
-    // registration
-    Route::get("/registration", [RegistrationController::class, 'create'])->name('register');
-    Route::post("/registration", [RegistrationController::class, 'store'])->name('register.store');
+Route::group(
+    ['as' => 'auth.'],
+    function () {
+        // registration
+        Route::get("/registration", [RegistrationController::class, 'create'])->name('register');
+        Route::post("/registration", [RegistrationController::class, 'store'])->name('register.store');
 
-    // login
-    Route::get("/login", [LoginController::class, 'create'])->name('login');
-    Route::post("/login", [LoginController::class, 'store'])->name('login.store');
+        // login
+        Route::get("/login", [LoginController::class, 'create'])->name('login');
+        Route::post("/login", [LoginController::class, 'store'])->name('login.store');
+        Route::group(
+            ['middleware' => 'auth'],
+            function () {
+                Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
+            }
+        );
+    }
+);
 
-    Route::group(['middleware' => 'auth'], function () {
-        Route::get('/dashboard', [AdminController::class, 'dashboardPage']);
-        Route::get('/logout', [LoginController::class, 'destroy']);
-    });
+Route::group(['middleware' => 'auth', 'as' => 'admin.'], function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboardPage'])->name('dashboard');
 });

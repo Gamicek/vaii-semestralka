@@ -7,7 +7,7 @@
     @include('include.header')
 </section>
 
-<section class="my-24">
+<section class="mt-24">
     <div class="w-4/5 m-auto text-center">
         <div class="py-15 border-b border-gray-200">
             <h2 class="text-6xl mb-10">

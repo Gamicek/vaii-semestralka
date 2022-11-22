@@ -10,7 +10,7 @@
 <section>
         
     <div class="flex items-center justify-center h-screen bg-gray-100">
-        <form action="{{ route('fe-pages.login.store') }}" class="loginForm" method="POST">
+        <form action="{{ route('auth.login.store') }}" class="loginForm" method="POST">
             @csrf
             <div class="err login text-center mb-2 bg-red-600 text-white text-2xl rounded-md">
                 <p></p>
@@ -56,7 +56,7 @@
                 <button class="bg-pallette-light-blue w-full text-black py-2 rounded hover:bg-blue-600 transition-colors mt-4">Log In</button>
             </div>
             <li class="list-none">
-                <a href="{{ route('fe-pages.register')}}" class=" hover:text-gray-400 uppercase text-black">New user ? Register here</a>
+                <a href="{{ route('auth.register')}}" class=" hover:text-gray-400 uppercase text-black">New user ? Register here</a>
             </li>
         </form>
     </div>

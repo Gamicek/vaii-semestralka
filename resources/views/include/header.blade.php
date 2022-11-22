@@ -36,10 +36,14 @@
    
         @auth
        
-            <li><a href="logout" class="navBar uppercase">Logout</a></li>
+        <form action="{{ route('auth.logout') }}" method="POST">
+            @csrf
+            <li><button type="submit" class="navBar uppercase">Logout</button></li>
+        </form>
+            <li><a href="{{ route('admin.dashboard') }}" class="navBar uppercase">DashBoard</a></li>
         @else
             
-            <a href="{{ route('fe-pages.login')}}" class="navBar uppercase">Log In</a>
+            <a href="{{ route('auth.login')}}" class="navBar uppercase">Log In</a>
         @endauth
     
       </ul>

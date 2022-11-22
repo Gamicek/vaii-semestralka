@@ -25,9 +25,4 @@ class FrontEndController extends Controller
     {
         return view('pages.aboutUs');
     }
-
-    public function loginPage()
-    {
-        return view('pages.login');
-    }
 }
