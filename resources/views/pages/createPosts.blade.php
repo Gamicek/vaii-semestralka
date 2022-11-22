@@ -8,7 +8,7 @@
 </section>
 
 <section class="my-24">
-   
+    
             <h2 class="text-6xl mb-8 text-center">
                 Create posts
             </h2>
@@ -17,7 +17,7 @@
 
     <div class="w-4/5 m-auto pt-20 block text-center object-center ">
         
-        <div class="err create">
+        <div class="err create text-center mb-2 bg-red-600 text-white text-2xl rounded-md ">
         <p></p>
         </div>
         <form action="/posts" method="POST" enctype="multipart/form-data" class="create_form">

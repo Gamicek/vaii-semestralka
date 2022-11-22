@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Session;
@@ -11,38 +12,22 @@ use Session;
 class LoginController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $users = User::all();
-        return view("pages.login");
-    }
-
-    /**
      * Show the form for creating a new resourc
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('pages.login');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Try to authenticate user with given credentials
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
-    {
-        //
-    }
-
-    public function loginUser(Request $request)
+    public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
 
@@ -54,11 +39,14 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($validator->errors())->withInput(request()->all());
         }
 
-        $user = User::where('email', '=', $request->email)->first();
+        $user = User::where('email', 'LIKE', $request->email)->first();
         if ($user) {
             if (Hash::check($request->password, $user->password)) {
-                $request->session()->put('loginID', $user->id);
-                return redirect('dashboarad');
+                Auth::login($user);
+
+                $request->session()->regenerate();
+
+                return redirect()->intended('dashboard');
             } else {
                 return back()->with('fail', 'Password not matches');
             }
@@ -67,30 +55,20 @@ class LoginController extends Controller
         }
     }
 
-    public function dashboarad()
-    {
-        $data = array();
-        if (Session::has('loginID')) {
-            $data = User::where('id', '=', Session::get('loginID'))->first();
-        }
-        return view('pages.dashboarad', compact('data'));
-    }
-
-    public function logout()
-    {
-        if (Session::has('loginID')) {
-            Session::pull('loginID');
-            return redirect('login');
-        }
-    }
     /**
-     * Remove the specified resource from storage.
+     * Logout user
      *
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy(Request $request)
     {
-        //
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('fe-pages.home-page');
     }
 }

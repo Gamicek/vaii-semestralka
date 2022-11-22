@@ -24,12 +24,12 @@
     
 
 
-    @if (Session()->has('loginID'))
+    @auth
     <div class="pt-15 w-4/5 m-auto text-gray-50 mt-8  ">
         <a href="{{ route('fe-pages.posts.create') }}" class="uppercase font-bold bg-green-600 py-3 px-5 rounded-2xl hover:bg-green-900">Create post</a>
     </div>
    
-    @endif
+    @endauth
 
     @foreach ($posts as $post)
         <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200 mt-20">
@@ -48,7 +48,7 @@
                     Keep Reading
                 </a>
 
-                @if (Session()->has('loginID'))
+                @auth
                     <span class="float-right mt-3">
                         <a href="/posts/{{ $post->slug }}/edit" class=" uppercase py-3 px-7 rounded-2xl bg-gray-600 text-white hover:bg-slate-900 ">Edit</a>
                     </span>
@@ -63,13 +63,11 @@
                         </button>
                         </form>
                     </span>
-                @endif
+                @endauth
             </div>
         </div>  
     @endforeach
  
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-</section>
 
 
 

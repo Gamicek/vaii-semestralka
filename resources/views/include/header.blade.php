@@ -34,13 +34,13 @@
           <a href="{{ route('fe-pages.contact.index')}}" class="navBar uppercase">Contact Us</a>
         </li>
    
-        @if(Session()->has('loginID'))
+        @auth
        
             <li><a href="logout" class="navBar uppercase">Logout</a></li>
         @else
             
-            <a href="{{ route('fe-pages.login.index')}}" class="navBar uppercase">Log In</a>
-        @endif
+            <a href="{{ route('fe-pages.login')}}" class="navBar uppercase">Log In</a>
+        @endauth
     
       </ul>
     </div>

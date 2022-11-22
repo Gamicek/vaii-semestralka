@@ -10,11 +10,11 @@
 <section>
         
     <div class="flex items-center justify-center h-screen bg-gray-100">
-            <div class="err login">
+        <form action="{{ route('fe-pages.login.store') }}" class="loginForm" method="POST">
+            @csrf
+            <div class="err login text-center mb-2 bg-red-600 text-white text-2xl rounded-md">
                 <p></p>
             </div>
-         <form action="{{ route('fe-pages.login-user') }}" class="loginForm" method="POST">
-            @csrf
             
             @if(Session::has('success'))
             <div class="w-full bg-green-600 rounded-md mb-8">
@@ -56,7 +56,7 @@
                 <button class="bg-pallette-light-blue w-full text-black py-2 rounded hover:bg-blue-600 transition-colors mt-4">Log In</button>
             </div>
             <li class="list-none">
-                <a href="{{ route('fe-pages.registration.index')}}" class="navBar uppercase ">New user ? Register here</a>
+                <a href="{{ route('fe-pages.register')}}" class=" hover:text-gray-400 uppercase text-black">New user ? Register here</a>
             </li>
         </form>
     </div>

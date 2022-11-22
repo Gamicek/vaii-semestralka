@@ -6,13 +6,15 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use App\Models\Users;
+use Illuminate\Support\Facades\Auth;
 use Session;
+
 
 class PostController extends Controller
 {
     public function __construct()
     {
-        // $this->middleware((Session()->has('loginID')), ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
     /**
      * Display a listing of the resource.
@@ -21,10 +23,7 @@ class PostController extends Controller
      */
     public function index()
     {
-
         return view('pages.posts')->with('posts', Post::orderBy('updated_at', 'DESC')->get());
-        //$posts = Post::all();
-        //return view("pages.dashboard", compact('posts'));
     }
 
     /**
@@ -35,10 +34,6 @@ class PostController extends Controller
     public function create()
     {
         return view('pages.createPosts');
-
-        // $posts = Post::all();
-        //return view("pages.posts", compact('posts'));
-
     }
 
     /**
@@ -67,7 +62,7 @@ class PostController extends Controller
             'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $newImageName,
-            'user_id' =>  4
+            'user_id' =>  Auth::id()
 
         ]);
 
@@ -115,7 +110,7 @@ class PostController extends Controller
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
-            'user_id' =>  4
+            'user_id' =>  Auth::id()
 
         ]);
 

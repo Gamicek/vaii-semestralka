@@ -9,10 +9,11 @@
 
 <section>
      <div class="flex items-center justify-center h-screen bg-gray-100">
-        <div class="err register">
-             <p></p>
-        </div>
-        <form action="{{ route('fe-pages.registration.create') }}" method="GET" class="registerForm">
+         <form action="{{ route('fe-pages.register.store') }}" method="POST" class="registerForm">
+            @csrf
+            <div class="err register text-center mb-2 bg-red-600 text-white text-2xl rounded-md">
+                 <p></p>
+            </div>
             @if(Session::has('success'))
             <div class="w-full bg-green-600 rounded-md mb-8">
                 <h2 class="error-wrapper-heading font-bold text-xl text-white py-2 px-3 bg-green-800 rounded-t-md">{{Session::get('success')}} </h2>
@@ -49,7 +50,7 @@
                 <button class="bg-pallette-light-blue w-full text-black py-2 rounded hover:bg-blue-600 transition-colors mt-4">Register</button>
             </div>
             <li class="list-none">
-                <a href="{{ route('fe-pages.login.index')}}" class="navBar uppercase ">Already register ? Log in</a>
+                <a href="{{ route('fe-pages.login')}}" class="hover:text-gray-400 uppercase text-black">Already register ? Log in</a>
             </li>
         </form>
     </div>

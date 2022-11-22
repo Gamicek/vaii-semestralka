@@ -8,13 +8,14 @@
 </section>
 
 <section class=" mb-20 ">
-
   <h1 class="text-center text-4xl font-bold mt-96 md:mt-32">Kontaktujte nás</h1>
-
-<div class="err contact">
-  <p></p>
-</div>
+  
+  
+  
   <form class="w-full max-w-lg m-auto mt-10 flex flex-col contact_forms" action="{{ route('fe-pages.contact.store') }}" method="POST">
+    <div class="err contact text-center mb-2 bg-red-600 text-white text-2xl rounded-md">
+      <p></p>
+    </div>
     @csrf
     <p>
           @if ($errors->any())

@@ -68,4 +68,9 @@
 
         </div>
     </section>
+       <a href="#" class="to-top bg-pallette-light-light-blue fixed bottom-4 right-8 w-14 h-14 border rounded-3xl flex items-center justify-center text-2xl 
+    pointer-events-auto translate-y-40 transition duration-700 ">
+        <i class="fa-sharp fa-solid fa-arrow-up"></i>
+   </a>
+</section>
 </footer>

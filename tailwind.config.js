@@ -19,7 +19,8 @@ module.exports = {
       colors: {
         pallette: {
           "light-blue": "#43c3ea",
-          "text-gray": "#999"
+          "text-gray": "#999",
+          "light-light-blue": "#6c81bd"
         },
       },
     },

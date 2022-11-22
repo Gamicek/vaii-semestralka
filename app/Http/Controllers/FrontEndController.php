@@ -30,19 +30,4 @@ class FrontEndController extends Controller
     {
         return view('pages.login');
     }
-
-    public function postsPage()
-    {
-        return view('pages.posts');
-    }
-
-    public function registrationPage()
-    {
-        return view('pages.registration');
-    }
-
-    public function adminPage()
-    {
-        return view('pages.admin');
-    }
 }

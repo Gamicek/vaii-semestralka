@@ -28,4 +28,20 @@
        
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 20px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #1f3b8a;
+         
+    }
+
+        ::-webkit-scrollbar-track {
+            background: #6c81bd;
+        }
 } 

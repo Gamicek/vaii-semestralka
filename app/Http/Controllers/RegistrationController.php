@@ -10,22 +10,22 @@ use Illuminate\Support\Facades\Hash;
 class RegistrationController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display registration form
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function create()
     {
-        $users = User::all();
-        return view("pages.registration", compact('users'));
+        return view("pages.registration");
     }
 
     /**
-     * Show the form for creating a new resourc
+     * Store a newly created resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
 
@@ -50,18 +50,6 @@ class RegistrationController extends Controller
         } else {
             return back()->with('fail', 'Something wrong');
         }
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-
-        //
     }
 
     /**

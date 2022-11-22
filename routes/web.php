@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\LoginController;
@@ -21,16 +22,23 @@ use Illuminate\Auth\Events\Logout;
 
 Route::group(['as' => 'fe-pages.'], function () {
     Route::get('/', [FrontEndController::class, 'homePage'])->name('home-page');
-    Route::resource("/contact", ContactController::class)->only(["index", "store", "destroy"]);
-    Route::resource("/posts", PostController::class)->only(["index", "create", "store", "show", "edit", "update", "destroy"]);
+    Route::resource("/contact", ContactController::class)->only(["index"]);
+
+    Route::resource("/posts", PostController::class);
+
     Route::get('/services', [FrontEndController::class, 'servicesPage'])->name('services-page');
     Route::get('/about-us', [FrontEndController::class, 'aboutUsPage'])->name('aboutUs-page');
 
-    //AlreadyLoggedIn
+    // registration
+    Route::get("/registration", [RegistrationController::class, 'create'])->name('register');
+    Route::post("/registration", [RegistrationController::class, 'store'])->name('register.store');
 
-    Route::resource("/registration", RegistrationController::class)->only(["index", "create", "store", "destroy"])->middleware('AlreadyLoggedIn');
-    Route::resource("/login", LoginController::class)->only(["index", "create", "store", "destroy"])->middleware('AlreadyLoggedIn');
-    Route::post('login-user', [LoginController::class, 'loginUser'])->name('login-user');
-    Route::get('/dashboarad', [LoginController::class, 'dashboarad'])->middleware('isLoggedIn');
-    Route::get('/logout', [LoginController::class, 'logout']);
+    // login
+    Route::get("/login", [LoginController::class, 'create'])->name('login');
+    Route::post("/login", [LoginController::class, 'store'])->name('login.store');
+
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboardPage']);
+        Route::get('/logout', [LoginController::class, 'destroy']);
+    });
 });
